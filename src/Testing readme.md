@@ -6,4 +6,6 @@ END TO END TESTING:
 
 Reference: https://www.browserstack.com/guide/playwright-cucumber
 
-Execution command: npm run test-feature
+Execution command: npm run test-feature. 
+
+Run the project in local and then run the tests.

@@ -11,19 +11,19 @@ Feature: Login Page
   Scenario: User enters credentials
     When I enter "emilys" in the "username" field
     And I enter "emilyspass" in the "password" field
-    Then the "username" field should contain "emilys"
-    And the "password" field should contain "emilyspass"
+    Then The "username" field should contain "emilys"
+    And The "password" field should contain "emilyspass"
 
   Scenario: User submits the login form
     When I enter "emilys" in the "username" field
     And I enter "emilyspass" in the "password" field
     And I click the login button
-    Then the login API should be called
+    Then The login API should be called
 
   Scenario: Login API is called with correct payload
     When I enter "emilys" in the "username" field
     And I enter "emilyspass" in the "password" field
     And I click the login button
-    Then the login API request should contain:
+    Then The login API request should contain:
       | username | emilys     |
       | password | emilyspass |

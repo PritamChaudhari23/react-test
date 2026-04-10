@@ -14,15 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1395307400
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1094398699
+              "duration": 852923100
             }
           },
           {
@@ -30,399 +22,12 @@
             "keyword": "Given ",
             "line": 4,
             "name": "I am on the login page",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 7,
-            "name": "I should see the username field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "I should see the password field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I should see the login button",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:44"
+            },
             "result": {
               "status": "passed",
-              "duration": 446606200
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 407684100
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "login-page;user-enters-credentials",
-        "keyword": "Scenario",
-        "line": 11,
-        "name": "User enters credentials",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 998775099
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 973842600
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I am on the login page",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 12,
-            "name": "I enter \"emilys\" in the username field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 13,
-            "name": "I enter \"emilyspass\" in the password field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 14,
-            "name": "the username field should contain \"emilys\"",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "the password field should contain \"emilyspass\"",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 426333900
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 487234799
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "login-page;user-submits-the-login-form",
-        "keyword": "Scenario",
-        "line": 17,
-        "name": "User submits the login form",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 967916999
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1007875500
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I am on the login page",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 18,
-            "name": "I enter \"emilys\" in the username field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 19,
-            "name": "I enter \"emilyspass\" in the password field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "I click the login button",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 21,
-            "name": "the login API should be called",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 406274699
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 552074500
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "login-page;login-api-is-called-with-correct-payload",
-        "keyword": "Scenario",
-        "line": 23,
-        "name": "Login API is called with correct payload",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 996010999
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1055477800
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I am on the login page",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 24,
-            "name": "I enter \"emilys\" in the username field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "I enter \"emilyspass\" in the password field",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 26,
-            "name": "I click the login button",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [
-              {
-                "rows": [
-                  {
-                    "cells": [
-                      "username",
-                      "emilys"
-                    ]
-                  },
-                  {
-                    "cells": [
-                      "password",
-                      "emilyspass"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "keyword": "Then ",
-            "line": 27,
-            "name": "the login API request should contain:",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 429868200
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 475210200
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "login-page",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "Login Page",
-    "tags": [],
-    "uri": "e2e\\features\\login-old.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "login-page;login-form-is-displayed",
-        "keyword": "Scenario",
-        "line": 6,
-        "name": "Login form is displayed",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 896276400
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1073991100
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "I am on the login page",
-            "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "duration": 1200891600
             }
           },
           {
@@ -431,11 +36,11 @@
             "line": 7,
             "name": "I should see the \"username\" field",
             "match": {
-              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:54"
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:60"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 47883699
             }
           },
           {
@@ -444,11 +49,11 @@
             "line": 8,
             "name": "I should see the \"password\" field",
             "match": {
-              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:54"
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:60"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 6127299
             }
           },
           {
@@ -456,9 +61,12 @@
             "keyword": "And ",
             "line": 9,
             "name": "I should see the login button",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:64"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 6792399
             }
           },
           {
@@ -466,15 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 513831700
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 420450199
+              "duration": 263794399
             }
           }
         ],
@@ -493,15 +93,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1017807499
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1040485300
+              "duration": 567861699
             }
           },
           {
@@ -509,9 +101,12 @@
             "keyword": "Given ",
             "line": 4,
             "name": "I am on the login page",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:44"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 141913599
             }
           },
           {
@@ -523,8 +118,8 @@
               "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:50"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 65477499
             }
           },
           {
@@ -536,34 +131,34 @@
               "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:50"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 17379399
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 14,
-            "name": "the \"username\" field should contain \"emilys\"",
+            "name": "The \"username\" field should contain \"emilys\"",
             "match": {
-              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:58"
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:68"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 6882800
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 15,
-            "name": "the \"password\" field should contain \"emilyspass\"",
+            "name": "The \"password\" field should contain \"emilyspass\"",
             "match": {
-              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:58"
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:68"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 6735599
             }
           },
           {
@@ -571,15 +166,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 483591100
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 496546399
+              "duration": 400777200
             }
           }
         ],
@@ -598,15 +185,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 867676899
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1049662700
+              "duration": 591911199
             }
           },
           {
@@ -614,9 +193,12 @@
             "keyword": "Given ",
             "line": 4,
             "name": "I am on the login page",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:44"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 140827400
             }
           },
           {
@@ -628,8 +210,8 @@
               "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:50"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 61120299
             }
           },
           {
@@ -641,8 +223,8 @@
               "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:50"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 19712100
             }
           },
           {
@@ -650,19 +232,26 @@
             "keyword": "And ",
             "line": 20,
             "name": "I click the login button",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:54"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 58929700
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 21,
-            "name": "the login API should be called",
+            "name": "The login API should be called",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:73"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "failed",
+              "duration": 30015011600,
+              "error_message": "page.waitForRequest: Timeout 30000ms exceeded while waiting for event \"request\"\n=========================== logs ===========================\nwaiting for request \"**/auth/login\"\n============================================================\n    at World.<anonymous> (D:\\My Projects\\A. Repositories\\1. Frontend\\react-test\\e2e\\steps\\login.step.js:74:14)"
             }
           },
           {
@@ -670,15 +259,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 449853600
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 437923800
+              "duration": 253257999
             }
           }
         ],
@@ -697,15 +278,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 942924600
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1051767000
+              "duration": 560451300
             }
           },
           {
@@ -713,9 +286,12 @@
             "keyword": "Given ",
             "line": 4,
             "name": "I am on the login page",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:44"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 170536900
             }
           },
           {
@@ -727,8 +303,8 @@
               "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:50"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 63436000
             }
           },
           {
@@ -740,8 +316,8 @@
               "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:50"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 22861499
             }
           },
           {
@@ -749,9 +325,12 @@
             "keyword": "And ",
             "line": 26,
             "name": "I click the login button",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:54"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 54395199
             }
           },
           {
@@ -775,10 +354,13 @@
             ],
             "keyword": "Then ",
             "line": 27,
-            "name": "the login API request should contain:",
+            "name": "The login API request should contain:",
+            "match": {
+              "location": "file:\\D:\\My%20Projects\\A.%20Repositories\\1.%20Frontend\\react-test\\e2e\\steps\\login.step.js:77"
+            },
             "result": {
-              "status": "ambiguous",
-              "duration": 0
+              "status": "passed",
+              "duration": 2835200
             }
           },
           {
@@ -786,15 +368,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 401389800
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 424272500
+              "duration": 297198899
             }
           }
         ],

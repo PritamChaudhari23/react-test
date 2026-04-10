@@ -45,28 +45,10 @@ Given("I am on the login page", async function () {
   await page.goto("http://localhost:5173");
 });
 
-// Improved
-When("I enter {string} in the {string} field", async function (fieldValue, fieldName) {
-  await page.fill(`input[name=${fieldName}]`, fieldValue);
-});
-
-Then("I should see the {string} field", async function (fieldName) {
-  await expect(page.locator(`input[name=${fieldName}]`)).toBeVisible();
-});
-
-Then("the {string} field should contain {string}", async function (fieldName, expectedValue) {
-    const inputField = page.locator(`input[name=${fieldName}]`);
-    await expect(inputField).toHaveValue(expectedValue);
-});
-
 /* ---------------- WHEN ---------------- */
 
-When("I enter {string} in the username field", async function (username) {
-  await page.fill('input[name="username"]', username);
-});
-
-When("I enter {string} in the password field", async function (password) {
-  await page.fill('input[name="password"]', password);
+When("I enter {string} in the {string} field", async function (fieldValue, fieldName) {
+  await page.fill(`input[name=${fieldName}]`, fieldValue);
 });
 
 When("I click the login button", async function () {
@@ -75,46 +57,26 @@ When("I click the login button", async function () {
 
 /* ---------------- THEN ---------------- */
 
-Then("the login API should be called", async function () {
-  await page.waitForRequest("**/auth/login");
-});
-
-Then(
-  "the login API request should contain:",
-  async function (dataTable) {
-    const expected = dataTable.rowsHash();
-    const actual = JSON.parse(lastLoginRequest.postData());
-
-    expect(actual).toEqual(expected);
-  }
-);
-
-Then("I should see the username field", async function () {
-  await expect(page.locator('input[name="username"]')).toBeVisible();
-});
-
-Then("I should see the password field", async function () {
-  await expect(page.locator('input[name="password"]')).toBeVisible();
+Then("I should see the {string} field", async function (fieldName) {
+  await expect(page.locator(`input[name=${fieldName}]`)).toBeVisible();
 });
 
 Then("I should see the login button", async function () {
   await expect(page.locator('button[type="submit"]')).toBeVisible();
 });
 
-Then(
-  "the username field should contain {string}",
-  async function (expectedValue) {
-    const usernameInput = page.locator('input[name="username"]');
-    await expect(usernameInput).toHaveValue(expectedValue);
+Then("The {string} field should contain {string}", async function (fieldName, expectedValue) {
+    const inputField = page.locator(`input[name=${fieldName}]`);
+    await expect(inputField).toHaveValue(expectedValue);
+});
+
+Then("The login API should be called", async function () {
+  await page.waitForRequest("**/auth/login");
+});
+
+Then("The login API request should contain:", async function (dataTable) {
+    const expected = dataTable.rowsHash();
+    const actual = JSON.parse(lastLoginRequest.postData());
+    expect(actual).toEqual(expected);
   }
 );
-
-Then(
-  "the password field should contain {string}",
-  async function (expectedValue) {
-    const passwordInput = page.locator('input[name="password"]');
-    await expect(passwordInput).toHaveValue(expectedValue);
-  }
-);
-
-

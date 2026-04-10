@@ -23,5 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+# Cucumber reports
 cucumber-report.html
 cucumber-report.json
+cucumber.json
