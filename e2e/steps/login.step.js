@@ -20,8 +20,9 @@ Before(async function () {
   context = await browser.newContext();
 
   // Intercept login API
-  await context.route("**/auth/login", async route => {
+  await context.route(/.*\/auth\/login/, async route => {
     lastLoginRequest = route.request();
+    console.log("API intercepted:", route.request().url());
 
     await route.fulfill({
       status: 200,
@@ -71,7 +72,7 @@ Then("The {string} field should contain {string}", async function (fieldName, ex
 });
 
 Then("The login API should be called", async function () {
-  await page.waitForRequest("**/auth/login");
+  expect(lastLoginRequest).toBeTruthy();
 });
 
 Then("The login API request should contain:", async function (dataTable) {

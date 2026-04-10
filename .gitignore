@@ -26,4 +26,3 @@ dist-ssr
 # Cucumber reports
 cucumber-report.html
 cucumber-report.json
-cucumber.json
