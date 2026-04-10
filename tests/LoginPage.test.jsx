@@ -1,110 +1,118 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import LoginPage from "../src/Login/LoginPage";
 
-// Mocking fetch
+// Mock fetch globally
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve({}),
   })
 );
 
-describe("Testing suite for LoginPage component", () => {
+const setup = () => {
+  const usernameInput = screen.getByLabelText(/Username/i);
+  const passwordInput = screen.getByLabelText(/Password/i);
+  const loginButton = screen.getByRole("button", { name: /Login/i });
+
+  return { usernameInput, passwordInput, loginButton };
+};
+
+describe("LoginPage Test Suite", () => {
   beforeEach(() => {
     render(<LoginPage />); //runs before every test in the suite
   });
 
   afterEach(() => {
-    // some cleanup - runs after every test in the suite
-    jest.clearAllMocks();
+    jest.resetAllMocks(); // some cleanup - runs after every test in the suite
   });
 
-  //   it("It is also used instead of test", () => {})
+  // it("It is also used instead of test", () => {})
 
-  test("Test if the component renders correctly", () => {
-    const usernameInput = screen.getByLabelText(/Username/i);
-    const passwordInput = screen.getByLabelText(/Password/i);
+  test("Renders the fields and button correctly", () => {
+    const { usernameInput, passwordInput, loginButton } = setup();
 
     expect(usernameInput).toBeInTheDocument();
     expect(passwordInput).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Login/i })).toBeInTheDocument();
+    expect(loginButton).toBeInTheDocument();
   });
 
-  test("Test if the input field works", () => {
-    const usernameInput = screen.getByLabelText(/Username/i);
-    const passwordInput = screen.getByLabelText(/Password/i);
+  test("Allows user to type into input fields", async () => {
+    const { usernameInput, passwordInput } = setup();
 
-    fireEvent.change(usernameInput, { target: { value: "emilys" } });
-    fireEvent.change(passwordInput, { target: { value: "emilyspass" } });
+    await userEvent.type(usernameInput, "emilys");
+    await userEvent.type(passwordInput, "emilyspass");
 
-    expect(usernameInput.value).toBe("emilys");
-    expect(passwordInput.value).toBe("emilyspass");
+    expect(usernameInput).toHaveValue("emilys");
+    expect(passwordInput).toHaveValue("emilyspass");
   });
 
-    test("Validate username input length", () => {
-      const usernameInput = screen.getByLabelText(/Username/i);
-      fireEvent.change(usernameInput, { target: { value: "verylong" } });
-      expect(usernameInput.value.length).toBeLessThanOrEqual(8);
-    });
+  test("Shows error when username is missing", async () => {
+    const { usernameInput, passwordInput, loginButton } = setup();
 
-    test("Validate password input length", () => {
-      const passwordInput = screen.getByLabelText(/Password/i);
-      fireEvent.change(passwordInput, { target: { value: "short" } });
-      expect(passwordInput.value.length).toBeLessThan(8);
-    });
+    await userEvent.type(passwordInput, "emilyspass");
+    await userEvent.click(loginButton);
 
-  test("Display error when username is not provided", () => {
-    const passwordInput = screen.getByLabelText(/Password/i);
-    const submitButton = screen.getByRole("button", { name: /Login/i });
-
-    fireEvent.change(passwordInput, { target: { value: "emilyspass" } });
-    fireEvent.click(submitButton);
-
-    expect(screen.getByLabelText(/Username/i)).toBeInvalid();
+    expect(usernameInput).toBeInvalid();
   });
 
-  test("Display error when password is not provided", () => {
-    const usernameInput = screen.getByLabelText(/Username/i);
-    const submitButton = screen.getByRole("button", { name: /Login/i });
+  test("Shows error when password is missing", async () => {
+    const { usernameInput, passwordInput, loginButton } = setup();
 
-    fireEvent.change(usernameInput, { target: { value: "emilys" } });
-    fireEvent.click(submitButton);
+    await userEvent.type(usernameInput, "emilys");
+    await userEvent.click(loginButton);
 
-    expect(screen.getByLabelText(/Password/i)).toBeInvalid();
+    expect(passwordInput).toBeInvalid();
   });
 
-    // test("Test if the button works and console log the credentials", () => {
-    //   const consoleSpy = jest.spyOn(console, "log");
+  test("Username should not exceed max length 8 characters", async () => {
+    const { usernameInput } = setup();
+    await userEvent.type(usernameInput, "verylongusername");
+    expect(usernameInput.value.length).toBeLessThanOrEqual(8);
+  });
 
-    //   const usernameInput = screen.getByLabelText(/Username/i);
-    //   const passwordInput = screen.getByLabelText(/Password/i);
-    //   const submitButton = screen.getByRole("button", { name: /Login/i });
+  test("Password should be invalid if less than 8 characters", async () => {
+    const { passwordInput, loginButton } = setup();
 
-    //   fireEvent.change(usernameInput, { target: { value: "emilys" } });
-    //   fireEvent.change(passwordInput, { target: { value: "emilyspass" } });
-    //   fireEvent.click(submitButton);
+    await userEvent.type(passwordInput, "short");
+    await userEvent.click(loginButton);
 
-    //   expect(consoleSpy).toHaveBeenCalledWith({
-    //     username: "emilys",
-    //     password: "emilyspass",
-    //   });
+    expect(passwordInput).toBeInvalid();
+  });
 
-    //   consoleSpy.mockRestore();
-    // });
+  test("Submits form and makes API call when valid", async () => {
+    const { usernameInput, passwordInput, loginButton } = setup();
 
-  test("Submit the form and makes an API call", async () => {
-    fireEvent.change(screen.getByLabelText(/Username/i), {
-      target: { value: "emilys" },
-    });
-    fireEvent.change(screen.getByLabelText(/Password/i), {
-      target: { value: "emilyspass" },
-    });
-
-    fireEvent.click(screen.getByRole("button", { name: /Login/i }));
+    await userEvent.type(usernameInput, "emilys");
+    await userEvent.type(passwordInput, "emilyspass");
+    await userEvent.click(loginButton);
 
     expect(fetch).toHaveBeenCalledTimes(1);
-    expect(fetch).toHaveBeenCalledWith(
-      "https://dummyjson.com/auth/login",
-      expect.any(Object)
-    );
+    expect(fetch).toHaveBeenCalledWith("https://dummyjson.com/auth/login", expect.any(Object));
+  });
+
+  test("logs API response to console on successful submit", async () => {
+    const { usernameInput, passwordInput, loginButton } = setup();
+
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation(() => { });
+
+    const mockResponse = { token: "abc123" };
+
+    fetch.mockResolvedValueOnce({
+      json: async () => mockResponse,
+    });
+
+    await userEvent.type(usernameInput, "emilys");
+    await userEvent.type(passwordInput, "emilyspass");
+    await userEvent.click(loginButton);
+
+    expect(consoleSpy).toHaveBeenCalledWith(mockResponse);
+
+    consoleSpy.mockRestore();
+  });
+
+  test("Prevent API call when form is invalid", async () => {
+    const { loginButton } = setup();
+    await userEvent.click(loginButton);
+    expect(fetch).not.toHaveBeenCalled();
   });
 });

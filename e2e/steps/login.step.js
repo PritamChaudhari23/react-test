@@ -45,6 +45,20 @@ Given("I am on the login page", async function () {
   await page.goto("http://localhost:5173");
 });
 
+// Improved
+When("I enter {string} in the {string} field", async function (fieldValue, fieldName) {
+  await page.fill(`input[name=${fieldName}]`, fieldValue);
+});
+
+Then("I should see the {string} field", async function (fieldName) {
+  await expect(page.locator(`input[name=${fieldName}]`)).toBeVisible();
+});
+
+Then("the {string} field should contain {string}", async function (fieldName, expectedValue) {
+    const inputField = page.locator(`input[name=${fieldName}]`);
+    await expect(inputField).toHaveValue(expectedValue);
+});
+
 /* ---------------- WHEN ---------------- */
 
 When("I enter {string} in the username field", async function (username) {
